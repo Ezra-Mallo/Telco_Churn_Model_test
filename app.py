@@ -40,16 +40,21 @@ class Customer(BaseModel):
 
 
 # ── Diagnostic endpoints ───────────────────────────────────────────────
+@app.get("/health")
 def health():
     return {"status": "ok", "model_version": scorer.version}
 
+
+@app.get("/model-info")
 def model_info():
     c = scorer.config
     return {"model_version": c["model_version"], "algorithm": c["algorithm"],
             "threshold": c["threshold"], "evaluation": c["evaluation"],
             "conditions": c["conditions"]}
 
+
 # ── Scoring endpoint ──────────────────────────────────────────────────
+@app.post("/predict")
 def predict(customers: List[Customer]):
     rows = []
     for c in customers:
