@@ -1,0 +1,185 @@
+{
+  "model_version": "telco-churn-1.0.0",
+  "model_file": "telco_pipeline.pkl",
+  "model_sha256": "b8d98defabd18f61c080b834e51f6769e8acb84772b7fef80495d1f691a15198",
+  "created_at": "2026-11-08T17:27:22",
+  "data_version": "telco_churn_v1_20261108_172323",
+  "algorithm": "LogisticRegression",
+  "best_params": {
+    "2_classifier__C": 0.1
+  },
+  "threshold": 0.52,
+  "max_flag_rate": 0.4,
+  "costs": {
+    "COST_FN": 1200,
+    "COST_FP": 50,
+    "OFFER_SUCCESS_RATE": 1.0
+  },
+  "raw_features": [
+    "SeniorCitizen",
+    "tenure",
+    "MonthlyCharges",
+    "TotalCharges",
+    "gender",
+    "Partner",
+    "Dependents",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod"
+  ],
+  "zero_impossible_cols": [
+    "MonthlyCharges"
+  ],
+  "service_addons": [
+    "MultipleLines",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies"
+  ],
+  "tenure_bin_inner_edges": [
+    12.0,
+    24.0,
+    36.0,
+    48.0,
+    60.0
+  ],
+  "numeric_limits": {
+    "tenure": [
+      0,
+      144
+    ],
+    "SeniorCitizen": [
+      0,
+      1
+    ],
+    "MonthlyCharges": [
+      0,
+      237.5
+    ],
+    "TotalCharges": [
+      0,
+      17369.6
+    ]
+  },
+  "required_numeric": [
+    "tenure",
+    "SeniorCitizen"
+  ],
+  "allowed_categories": {
+    "gender": [
+      "Female",
+      "Male"
+    ],
+    "Partner": [
+      "No",
+      "Yes"
+    ],
+    "Dependents": [
+      "No",
+      "Yes"
+    ],
+    "PhoneService": [
+      "No",
+      "Yes"
+    ],
+    "MultipleLines": [
+      "No",
+      "No phone service",
+      "Yes"
+    ],
+    "InternetService": [
+      "DSL",
+      "Fiber optic",
+      "No"
+    ],
+    "OnlineSecurity": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "OnlineBackup": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "DeviceProtection": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "TechSupport": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "StreamingTV": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "StreamingMovies": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "Contract": [
+      "Month-to-month",
+      "One year",
+      "Two year"
+    ],
+    "PaperlessBilling": [
+      "No",
+      "Yes"
+    ],
+    "PaymentMethod": [
+      "Bank transfer (automatic)",
+      "Credit card (automatic)",
+      "Electronic check",
+      "Mailed check"
+    ]
+  },
+  "reference_values": {
+    "SeniorCitizen": 0.0,
+    "tenure": 29.0,
+    "MonthlyCharges": 70.5,
+    "TotalCharges": 1394.925,
+    "gender": "Male",
+    "Partner": "No",
+    "Dependents": "No",
+    "PhoneService": "Yes",
+    "MultipleLines": "No",
+    "InternetService": "Fiber optic",
+    "OnlineSecurity": "No",
+    "OnlineBackup": "No",
+    "DeviceProtection": "No",
+    "TechSupport": "No",
+    "StreamingTV": "No",
+    "StreamingMovies": "No",
+    "Contract": "Month-to-month",
+    "PaperlessBilling": "Yes",
+    "PaymentMethod": "Electronic check"
+  },
+  "evaluation": {
+    "test_recall": 0.7567,
+    "test_precision": 0.5118,
+    "test_roc_auc": 0.8401,
+    "test_pr_auc": 0.631,
+    "test_savings_per_customer": 221.3982,
+    "decision": "GO WITH CONDITIONS"
+  },
+  "conditions": [
+    "Recall gap for SeniorCitizen = 0.164 > 0.1"
+  ]
+}

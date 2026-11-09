@@ -1,0 +1,4 @@
+deployment/prediction_log*.csv
+deployment/call_list_*.csv
+deployment/contact_log.csv
+agent_laptop/
